@@ -1,1 +1,8 @@
-# Execution-Cost-Optimization-Using-Polynomial-Ridge-Regression
+# Execution-Cost-Optimization-Using-Polynomial-Ridge-
+#As part of my research into optimal trade execution strategies, I recently explored how execution costs behave in response to varying market conditions using a machine learning approach. Specifically, I applied Polynomial Ridge Regression to model the relationship between order size, market volatility, and participation rate (POV)—a key parameter in algorithmic trading strategies that determines the speed of execution relative to market volume.
+
+The resulting cost surface (visualized below) maps the predicted execution cost as a function of order size and volatility, while holding POV fixed at 0.1 to simulate a passive trading style. What’s particularly insightful is that the cost does not increase linearly with either input. Instead, the surface reveals a convex, nonlinear relationship, where costs accelerate sharply in scenarios combining large order sizes and high market volatility. This reflects real-world market impact dynamics—large trades in volatile environments tend to consume more liquidity and drive price slippage, leading to exponentially higher execution costs.
+
+Conversely, the lower-left region of the surface—representing small trades in calm markets—remains relatively flat, indicating a low-cost regime where traders have greater flexibility to be aggressive without significant penalty.
+
+The choice of Polynomial Ridge Regression (degree 3 with L2 regularization) allows for modeling complex interactions between variables while maintaining interpretability and avoiding overfitting. It serves as a middle ground between simplistic linear models and opaque black-box approaches like tree ensembles or deep learning.
